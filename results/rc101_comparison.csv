@@ -1,0 +1,5 @@
+instance,method,vehicles,total_distance,gap_vs_best_%,late_customers,total_lateness,late_returns,overloaded_routes,runtime_s
+RC101,"Method A (cluster by load, shortest path)",9,1071.17,,82,10363.0,9,0,0.005
+RC101,"Method A2 (cluster by load, time order)",9,2017.35,,65,5715.1,8,0,0.001
+RC101,"OR-Tools (capacity + time windows, 30 s)",16,1671.61,,0,0.0,0,0,30.009
+RC101,Best known (SINTEF),14,1696.95,0.0,0,,,,

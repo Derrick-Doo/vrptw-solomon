@@ -57,9 +57,12 @@ def solve_ortools(df, n_vehicles, capacity, time_limit=30):
         time_dim.CumulVar(routing.Start(v)).SetRange(ready[0], due[0])
         time_dim.CumulVar(routing.End(v)).SetRange(ready[0], due[0])
 
-    # 4) Search: quick first solution, then guided local search until the time limit.
+    # 4) Search: build a first solution by cheapest insertion, then guided local search until the
+    #    time limit. PATH_CHEAPEST_ARC (extend each route with the nearest next stop) could not
+    #    build any feasible start on R101/RC101, whose time windows are tight; insertion can.
+    #    On C101 both give the same final result (10 trucks, 828.94).
     params = pywrapcp.DefaultRoutingSearchParameters()
-    params.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC
+    params.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PARALLEL_CHEAPEST_INSERTION
     params.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
     params.time_limit.FromSeconds(time_limit)
 

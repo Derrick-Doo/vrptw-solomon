@@ -1,5 +1,5 @@
-method,vehicles,total_distance,gap_vs_best_%,late_customers,total_lateness,late_returns,overloaded_routes,runtime_s
-"Method A (cluster by load, shortest path)",10,989.55,19.4,64,40307.4,7,0,0.005
-"Method A2 (cluster by load, time order)",10,1414.01,70.6,34,7546.3,4,0,0.001
-"OR-Tools (capacity + time windows, 30 s)",10,828.94,0.0,0,0.0,0,0,30.001
-Best known (SINTEF),10,828.94,0.0,0,,,,
+instance,method,vehicles,total_distance,gap_vs_best_%,late_customers,total_lateness,late_returns,overloaded_routes,runtime_s
+C101,"Method A (cluster by load, shortest path)",10,989.55,19.4,64,40307.4,7,0,0.005
+C101,"Method A2 (cluster by load, time order)",10,1414.01,70.6,34,7546.3,4,0,0.001
+C101,"OR-Tools (capacity + time windows, 30 s)",10,828.94,0.0,0,0.0,0,0,30.001
+C101,Best known (SINTEF),10,828.94,0.0,0,,,,
